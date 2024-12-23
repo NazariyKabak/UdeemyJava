@@ -60,11 +60,10 @@ public class BlackJack {
     }
 
     public static int drawRandomCard(){
-        int num=(int)(Math.random()*13)+1;
-        return num;
+        return (int)(Math.random()*13)+1;
+
     }
     public static String randomCard(int cardNumber){
-
         switch (cardNumber){
             case 1:
                 return "Ace";

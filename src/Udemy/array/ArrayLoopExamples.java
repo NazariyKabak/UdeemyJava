@@ -8,7 +8,6 @@ public class ArrayLoopExamples {
         for (int n: numbers){
             System.out.println(n);
         }
-
         // Example 2: Print the elements of a string array using a for loop
         String[] strArray = {"apple", "banana", "cherry"};
         // TODO: Use a for loop to print each element of the strArray

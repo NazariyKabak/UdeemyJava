@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Main main = new Main();
-        main.run8();
+        main.triviaQuiz();
     }
     private void run1() {
         boolean a = true;
@@ -227,4 +227,163 @@ public class Main {
 //        }
 
     }
+
+
+    public void wb3_2(){
+        double wallet = 100;
+
+        //See Learn the Part for the complete instructions (link in resources folder of Udemy video).
+
+
+        double toyCar = 5.99;
+        System.out.println("Can I get this car?");
+        if (toyCar<wallet) {
+            System.out.println("Sure");
+            wallet -= toyCar;
+        }else {
+            System.out.println("No!");
+        }
+
+
+        //if you have enough money
+        //       print: Sure!
+        //       pay for the toy car
+
+        //else:  Sorry, I only have <wallet> left.
+        System.out.println(wallet);
+        double nike = 95.99;
+        System.out.println("Can I get these nike shoes?");
+        if (nike<=wallet) {
+            System.out.println("Sure");
+            wallet -= nike;
+        }else {
+            System.out.println("No!");
+        }
+    }
+
+    public void wb3_3(){
+        int gryffindor = 400;
+        int ravenclaw = 200;
+        int div = gryffindor - ravenclaw;
+        if (div>=300){
+            System.out.println("gryffindor win!");
+        } else if (div>=0) {
+            System.out.println("gryffindor 2 place!");
+        } else if (div>=-100) {
+            System.out.println("gryffindor 3 place!");
+        }else {
+            System.out.println("gryffindor 4 place!");
+        }
+    }
+
+    public void wb3_4(){
+        int temp = 25;
+        String forecast;
+        if (temp<=-1){
+            forecast = "Freezzing!";
+        } else if (temp<=10) {
+            forecast = "Forecast is Chilly! Wear a coat!";
+        }else {
+            forecast = "It`s warm.";
+        }
+        System.out.println(forecast);
+    }
+
+    public void wb3_5(){
+        int day =6;
+        boolean holiday = false;
+        if (holiday){
+            System.out.println("Holiday!");
+        } else if (day==6 || day==7) {
+            System.out.println("Weekend!");
+        }else {
+            System.out.println("Workday!");
+        }
+    }
+
+    public void wb3_6(){
+        String day = "Monday";
+        switch (day) {
+            case "Monday":
+                System.out.println("Sorry, I have to stay at work late.");
+                break;
+            case "Tuesday":
+                System.out.println("It looks like I have meetings all day.");
+                break;
+            case "Wednesday":
+                System.out.println("I have a dentist appointment. Some other time!");
+                break;
+            case "Thursday":
+                System.out.println("Sorry, thursday is date night!");
+                break;
+            case "Friday":
+                System.out.println("I'm free!!");
+                break;
+            case "Saturday":
+                System.out.println("I'm free!!");
+                break;
+            case "Sunday":
+                System.out.println("I'm free!!");
+                break;
+
+            default:
+                System.out.println("That's not a day.");
+
+        }
+    }
+
+    public void wb3_7(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n****ROYAL BANK OF JAVA****");
+        System.out.println("Ви тут, щоб отримати іпотеку? (так чи ні)");
+        String firstAnswer=scan.nextLine();
+        if (firstAnswer.equals("yes")){
+            System.out.println("\nЧудово!" +"\nСкільки у вас заощаджень?" + "\nСкільки ви заборгували за кредитною карткою?");
+            double savings=scan.nextDouble();
+            double dept = scan.nextDouble();
+            System.out.println("\nСкільки років Ви працюєте?");
+            int year=scan.nextInt();
+            System.out.println("Як вас звати?");
+            scan.nextLine();
+            String name = scan.nextLine();
+            if (savings>=10000 && dept<5000 && year>2 ){
+                System.out.println("Вітаємо " +name+", вас схвалено!");
+            }else {
+                System.out.println("Вибачте, ви не маєте права на іпотеку");
+            }
+        }else {
+            System.out.println("\nОК. Гарного дня!");
+        }
+
+        scan.close();
+    }
+
+    public void triviaQuiz(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Which country held the 2016 Summer Olympics?");
+        String firstAnswer=scan.nextLine();
+        System.out.println("Which planet is the hottest?");
+        String secondAnswer=scan.nextLine();
+        System.out.println("What is the rarest blood type?");
+        String thirdAnswer=scan.nextLine();
+        System.out.println("Which one of these characters is friends with Harry Potter?");
+        String fourthAnswer=scan.nextLine();
+
+        int score =0;
+        if (firstAnswer.equals("c")){
+            score+=5;
+        }
+        if(secondAnswer.equals("a")){
+            score+=5;
+        }
+        if(thirdAnswer.equals("d")){
+            score+=5;
+        }
+        if(fourthAnswer.equals("a") || fourthAnswer.equals("b")){
+            score+=5;
+        }
+        System.out.println(score);
+    }
+
+
 }

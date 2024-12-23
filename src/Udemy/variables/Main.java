@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Main main = new Main();
-        main.run5();
+        main.chatBot();
     }
     public void run() {
         int passenger =5;
@@ -212,5 +212,114 @@ public class Main {
         System.out.println(lang+", that`s great! Nice chatting with you "+name+"."+" I have to log off now. See ya!");
         scan.close();
     }
+
+    public void wb2_1(){
+        int points = 0;
+        System.out.println(points);
+        System.out.println("Harry was caught wandering the halls. -50 points fot Gryffindor");
+        points -=50;
+        System.out.println(points);
+        System.out.println("Harry was being cheeky in class. -3 points");
+        points -= 3;
+        System.out.println(points);
+        System.out.println("Hermione got full marks on Lockhart`s quiz. 30 points");
+        points += 30;
+        System.out.println(points);
+        System.out.println("Ron won the underground chess game. 100 points");
+        points += 100;
+        System.out.println(points);
+        System.out.println("Harry defeated Quirrell. 60 points");
+        points += 60;
+        System.out.println(points);
+    }
+
+    public void wb2_2(){
+        String name = "Nazarii";
+        int age = 22;
+        String country = "Ukraine";
+        String sport = "football";
+        int hours = 2;
+        System.out.println(" My name is " +name +". "+ "I'm "+age+" years old, and I'm from "+country+".");
+        System.out.println("My favorite sport is " +sport+". I play for "+hours+" hour(s) a day.");
+    }
+    public void wb2_3(){
+        int numOfApples = 0;
+        int numOfCustomers = 0;
+        double profit = 0;
+
+        System.out.println("You picked 500 apples from apple orchards.");
+        numOfApples += 500;
+        System.out.println(numOfApples);
+        System.out.println("Time for business! You`re selling each apple for 40 cents");
+        double price =0.40;
+        System.out.println("One customer walked in . He bought 4 apples!");
+        numOfApples -= 4;
+        numOfCustomers+=1;
+        profit += (4 * price);
+        System.out.println("Another customer walked in . He bought 20 apples!");
+        numOfApples -= 20;
+        numOfCustomers+=1;
+        profit += (20 * price);
+        System.out.println("Another customer walked in . She bought 200 apples!");
+        numOfApples -= 200;
+        numOfCustomers+=1;
+        profit += (200 * price);
+
+        System.out.println(numOfApples);
+        System.out.println(numOfCustomers);
+        System.out.println(profit);
+    }
+
+    public void wb2_4(){
+        double sales = 24309.65;
+        double profit = 18562.18;
+        double refunds = 688.78;
+        double shipping = 1233.57;
+
+        System.out.println((int) sales);
+        System.out.println((int) profit);
+        System.out.println((int) refunds);
+        System.out.println((int) shipping);
+    }
+
+    public void wb2_5(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("What is your name?");
+        String name = scan.nextLine();
+        System.out.println("What is your last name?");
+        String lastName = scan.nextLine();
+        System.out.println("What is your age?");
+        int age = scan.nextInt();
+        System.out.println("Make a username: ");
+        scan.nextLine();
+        String username = scan.nextLine();
+        System.out.println("What city do you live in?");
+        String city = scan.nextLine();
+        System.out.println("What is your country?");
+        String country = scan.nextLine();
+        System.out.println(name);
+        System.out.println(lastName);
+        System.out.println(age);
+        System.out.println(city);
+        System.out.println(country);
+        System.out.println(username);
+    }
+
+    public void chatBot(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Hello! What is your name?");
+        String name = scan.nextLine();
+        System.out.println("Hi " + name + "!"+ " Where are you from?");
+        String city = scan.nextLine();
+        System.out.println("I hear it`s beatiful at " + city +"! "+ "I`m from a place called Oracle. How old are you?");
+        int age = scan.nextInt();
+        System.out.println("So you`re "+age +", cool!" + " I`m 400 years old.");
+        System.out.println("What is your favourite lang?");
+        scan.nextLine();
+        String lang = scan.nextLine();
+        System.out.println(lang + ", that`s great!");
+
+    }
+
 
 }

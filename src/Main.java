@@ -1,7 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        Main main = new Main();
-        main.run();
+//        Main main = new Main();
+//        main.run();
+        Integer n =10;
+        System.out.println(n);
+        n=11;
+        System.out.println(n);
     }
     private void run() {
         int n = 6;

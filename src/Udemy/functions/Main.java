@@ -5,11 +5,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Main main = new Main();
-        main.run3();
+        main.run1();
     }
     public void run1() {
-        System.out.println(areaSquare(2));
-        System.out.println(areaRectangle(5,3));
+        System.out.println(wb4_5(4));
 
     }
     public static void printBard(){
@@ -217,5 +216,72 @@ public class Main {
        System.out.println("ComputerChoice: " + computerChoice);
        System.out.println(result);
    }
+
+
+   public static void sayBurt (){
+       System.out.println("I will not copy and paste code.");
+       System.out.println("I will use Camel Case when writing class names.");
+       System.out.println("I will use lower Camel Case when writing function names.");
+       System.out.println("I will use lower Camel Case when writing variables names.");
+   }
+
+   public static void wb4_2(double bill){
+        double result = bill*0.15;
+        System.out.println(result);
+   }
+
+   public static double wb4_3(double fahrenheit){
+       return (fahrenheit-32)*5/9;
+   }
+
+   public static String wb4_4(int choice){
+        switch (choice){
+            case 1: return "Write 1 for butterfly";
+            case 2: return "Write 2 for elephant";
+
+            case 3: return "Write 3 for bear";
+
+            case 4: return "Write 4 for snake";
+
+        }
+        return "error";
+   }
+
+   public static double wb4_5(double side){
+        return Math.pow(side, 2);
+   }
+
+   public static double wb4_6(double length, double width){
+        return length*width;
+   }
+
+   public static double wb4_7(double base, double height){
+        return base*height/2;
+   }
+
+   public static double wb4_8(double radius){
+        return Math.PI*Math.pow(radius,2);
+   }
+
+   public static void scissorsPaperRock(){
+       Scanner scanner = new Scanner(System.in);
+       System.out.println("Let's play Rock Paper Scissors.");
+       System.out.println("When I say 'shoot', Choose: rock, paper, or scissors.");
+       System.out.println("Are you ready? Write 'yes' if you are");
+       System.out.println("Enter yes or no");
+       String response = scanner.nextLine();
+       if (response.equals("yes")){
+           System.out.println("Great!");
+           System.out.println("rock - paper - scissors");
+           String userChoice = scanner.nextLine();
+           String pcChoice=computerChoice();
+           String finalResult=wins(userChoice,pcChoice);
+           result(userChoice,pcChoice,finalResult);
+
+       }else {
+           System.out.println("Darn, some other time...!");
+       }
+   }
 }
+
 
