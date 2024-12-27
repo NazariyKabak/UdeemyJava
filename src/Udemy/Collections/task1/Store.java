@@ -26,4 +26,17 @@ public class Store {
     public void addMovie(Movie movie) {
         this.movies.add(new Movie(movie));
     }
+
+    public void displayMovies() {
+        for (Movie movie : movies) {
+            System.out.println(movie);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Store{" +
+                "movies=" + movies +
+                '}';
+    }
 }

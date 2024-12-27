@@ -1,7 +1,5 @@
 package Udemy.Collections.task2;
 
-import java.util.Objects;
-
 public class Book {
     private String title;
     private String author;
@@ -14,6 +12,7 @@ public class Book {
         this.rating = rating;
         this.price = price;
     }
+
     public Book(Book book) {
         this.title = book.title;
         this.author = book.author;
@@ -51,18 +50,5 @@ public class Book {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return Double.compare(rating, book.rating) == 0 && Double.compare(price, book.price) == 0 && Objects.equals(title, book.title) && Objects.equals(author, book.author);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(title, author, rating, price);
     }
 }

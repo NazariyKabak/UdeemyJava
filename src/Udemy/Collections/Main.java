@@ -1,9 +1,8 @@
 package Udemy.Collections;
 
 import Udemy.Collections.task1.Movie;
-import Udemy.Collections.task1.Store;
 import Udemy.Collections.task2.Book;
-import Udemy.Collections.task2.Sore;
+import Udemy.Collections.task2.Store;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +77,7 @@ public class Main {
         Book book1 = new Book("To Kill a Mockingbird", "Harper Lee", 4.27, 15.99);
         Book book2 = new Book("1984", "George Orwell", 4.17, 12.99);
 
-        Sore store = new Sore();
+        Store store = new Store();
         store.addBook(book1);
         store.addBook(book2);
 
