@@ -20,11 +20,11 @@ public class Team {
         this.name = name;
     }
 
-    public String getPlayers(String position) {
-        return players.get(position);
+    public String getPlayer(String position) {
+        return this.players.get(position);
     }
 
-    public void setPlayers(String position, String player) {
+    public void setPlayer(String position, String player) {
         players.put(position, player);
     }
 }

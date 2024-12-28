@@ -3,22 +3,21 @@ package Udemy.Exception.task1;
 import java.util.ArrayList;
 
 public class MagazineLibrary {
-    private ArrayList<Magazine> magazines;
-    public MagazineLibrary () {
-        magazines = new ArrayList<>();
+    private ArrayList<Magazine> magazines = new ArrayList<>();
+
+    public MagazineLibrary() {
+        this.magazines = new ArrayList<>();
     }
 
-    public MagazineLibrary(ArrayList<Magazine> magazines) {
-        this.magazines = magazines;
-    }
-
-    public Magazine getMagazines(int index) {
+    public Magazine getMagazine(int index) {
         return new Magazine(magazines.get(index));
     }
-    public void setMagazines(int index, Magazine magazine) {
-        this.magazines.set(index, magazine);
+
+    public void setMagazines(Magazine magazine, int index) {
+        magazines.set(index, new Magazine(magazine));
     }
+
     public void addMagazine(Magazine magazine) {
-        this.magazines.add(new Magazine(magazine));
+        magazines.add(new Magazine(magazine));
     }
 }

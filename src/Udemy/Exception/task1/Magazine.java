@@ -6,13 +6,18 @@ public class Magazine {
     private int issueNumber;
     private int publicationYear;
 
+    public Magazine(Magazine source) {
+        this.title = source.title;
+        this.publisher = source.publisher;
+        this.issueNumber = source.issueNumber;
+        this.publicationYear = source.publicationYear;
+    }
 
-
-    public Magazine(Magazine magazine) {
-        setTitle(magazine.title);
-        setPublisher(magazine.publisher);
-        setIssueNumber(magazine.issueNumber);
-        setPublicationYear(magazine.publicationYear);
+    public Magazine(String title, String publisher, int issueNumber, int publicationYear) {
+        setTitle(title);
+        setPublisher(publisher);
+        setIssueNumber(issueNumber);
+        setPublicationYear(publicationYear);
     }
 
     public String getTitle() {
@@ -20,8 +25,8 @@ public class Magazine {
     }
 
     public void setTitle(String title) {
-        if (title==null || title.isBlank()){
-            throw new IllegalArgumentException("Title cannot be null or empty");
+        if (title == null || title.isBlank()) {
+            throw new IllegalArgumentException("Title cannot be null");
         }
         this.title = title;
     }
@@ -31,8 +36,8 @@ public class Magazine {
     }
 
     public void setPublisher(String publisher) {
-        if (publisher==null || publisher.isBlank()){
-            throw new IllegalArgumentException("Publisher cannot be null or empty");
+        if (publisher == null || publisher.isBlank()) {
+            throw new IllegalArgumentException("Publisher cannot be null");
         }
         this.publisher = publisher;
     }
@@ -42,8 +47,8 @@ public class Magazine {
     }
 
     public void setIssueNumber(int issueNumber) {
-        if (issueNumber<=0){
-            throw new IllegalArgumentException("Issue number cannot be null or empty");
+        if (issueNumber <= 0) {
+            throw new IllegalArgumentException("Issue number cannot be negative");
         }
         this.issueNumber = issueNumber;
     }
@@ -53,17 +58,9 @@ public class Magazine {
     }
 
     public void setPublicationYear(int publicationYear) {
-        if (publicationYear==0 || issueNumber < 0){
-            throw new IllegalArgumentException("Publication year cannot be null or empty");
+        if (publicationYear <= 0) {
+            throw new IllegalArgumentException("Publication year cannot be negative");
         }
         this.publicationYear = publicationYear;
-    }
-
-    public Magazine(String title, String publisher, int issueNumber, int publicationYear) {
-        setTitle(title);
-        setPublisher(publisher);
-        setIssueNumber(issueNumber);
-        setPublicationYear(publicationYear);
-
     }
 }
