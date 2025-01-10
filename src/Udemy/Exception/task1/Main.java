@@ -4,56 +4,42 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Main main = new Main();
-        main.run();
-    }
-    private void run() {
-        Magazine magazine1 = new Magazine("Magazine 1", "Publisher 1", 1, 2020);
-        Magazine magazine2 = new Magazine("Magazine 2", "Publisher 2", 2, 2021);
+        Scanner scanner = new Scanner(System.in);
+
+        String title = promptForTitle(scanner);
+        String publisher = promptForPublisher(scanner);
+        int issueNumber = promptForIssueNumber(scanner);
+        int publicationYear = promptForPublicationYear(scanner);
+
+        Magazine newMagazine = new Magazine(title, publisher, issueNumber, publicationYear);
 
         MagazineLibrary library = new MagazineLibrary();
+        library.addMagazine(newMagazine);
 
-        // Test the addMagazine method
-        library.addMagazine(magazine1);
-        library.addMagazine(magazine2);
-
-        // Test the getMagazine method
-        Magazine retrievedMagazine = library.getMagazines(0);
-        System.out.println(retrievedMagazine.getTitle());
-
-        // Test the setMagazine method
-        Magazine newMagazine = new Magazine("Magazine 3", "Publisher 3", 3, 2022);
-        library.setMagazines( 0, newMagazine);
-
-        // Verify that the magazine was updated
-        retrievedMagazine = library.getMagazines(0);
-        System.out.println(retrievedMagazine.getTitle());
-
-    }
-    public static boolean isNullOrBlank(String input) {
-        return input == null || input.isBlank();
+        System.out.println("Magazine added to the library: " + newMagazine.getTitle());
     }
 
-    public static boolean incorrectIssueNumber(int issueNumber){
-        return issueNumber <=0;
+    public static boolean isNullOrBlank(String str) {
+        return str == null || str.isBlank();
     }
+
     public static boolean incorrectPublicationYear(int publicationYear) {
-        return publicationYear <=0;
+        return publicationYear <= 0;
     }
 
-    public static String promptForTitle(Scanner scanner) {
+    public static String promptForTitle(Scanner scanner){
         while (true) {
-            System.out.print("\nPlease enter a valid title: ");
+            System.out.println("Enter the title: ");
             String title = scanner.nextLine();
             if (!isNullOrBlank(title)) {
-                 return title;
+                return title;
             }
         }
     }
 
-    public static String promptForPublisher(Scanner scanner) {
+    public static String promptForPublisher(Scanner scanner){
         while (true) {
-            System.out.print("\nPlease enter a valid publisher: ");
+            System.out.println("Enter the publisher: ");
             String publisher = scanner.nextLine();
             if (!isNullOrBlank(publisher)) {
                 return publisher;
@@ -61,31 +47,21 @@ public class Main {
         }
     }
 
-    public static int promptForIssueNumber(Scanner scanner) {
+    public static int promptForIssueNumber(Scanner scanner){
         while (true) {
-            System.out.print("\nPlease enter a valid issue number (greater than 0): ");
-            // First check if the next input is not an integer
-            if (!scanner.hasNextInt()) {
-             scanner.next();
-             continue;
-            }
+            System.out.println("Enter the issue number: ");
             int issueNumber = scanner.nextInt();
-            if (!incorrectIssueNumber(issueNumber)) {
+            if (issueNumber > 0) {
                 return issueNumber;
             }
         }
     }
 
-    public static int promptForPublicationYear(Scanner scanner) {
+    public static int promptForPublicationYear(Scanner scanner){
         while (true) {
-            System.out.print("\nPlease enter a valid publication year (greater than 0): ");
-            // First check if the next input is not an integer
-            if (!scanner.hasNextInt()) {
-                 scanner.next();
-                 continue;
-            }
+            System.out.println("Enter the publication year: ");
             int publicationYear = scanner.nextInt();
-            if (!incorrectPublicationYear(publicationYear)) {
+            if (publicationYear > 0) {
                 return publicationYear;
             }
         }
