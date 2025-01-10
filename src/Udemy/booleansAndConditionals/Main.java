@@ -3,10 +3,11 @@ package Udemy.booleansAndConditionals;
 import java.util.Scanner;
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        Main main = new Main();
-        main.triviaQuiz();
+        sortNums();
     }
+
     private void run1() {
         boolean a = true;
         boolean b = false;
@@ -385,5 +386,259 @@ public class Main {
         System.out.println(score);
     }
 
+
+    public static void checkParityNum() {
+        System.out.println("Enter a number: ");
+        int num = scanner.nextInt();
+        if (num % 2 == 0) {
+            System.out.println("The number is even");
+        } else {
+            System.out.println("The number is odd");
+        }
+    }
+
+    public static String ageCategoryDefinition(){
+        System.out.println("Enter your age:");
+        int age = scanner.nextInt();
+        return age < 18? "Child": age>=13 && age <=19? "Teenager": age>=20 && age<=69? "Adult": "Senior";
+    }
+
+    public static void checkRangeNum(){
+        System.out.println("Enter a number: ");
+        if (scanner.hasNextDouble()){
+            double num = scanner.nextDouble();
+            if (num>=10 && num<=50){
+                System.out.println("The number is in the range");
+            }else {
+                System.out.println("The number is not in the range");
+            }
+        }
+    }
+
+
+    public static double calcMaxThreeNum(){
+        System.out.println("Enter three numbers:");
+        double num1 = scanner.nextDouble();
+        double num2 = scanner.nextDouble();
+        double num3 = scanner.nextDouble();
+        double max = num1;
+        if (num2>max){
+            max = num2;
+        }else if (num3>max){
+            max = num3;
+        }
+        return max;
+    }
+
+    public static void definitionLeapYear(){
+        System.out.println("Enter a year:");
+        int year = scanner.nextInt();
+        if (year%4==0 && year%100!=0 || year%400==0){
+            System.out.println("The year is a leap year");
+        }else {
+            System.out.println("The year is not a leap year");
+        }
+
+    }
+
+    public static void calc(){
+        System.out.println("Enter a action:");
+        char action = scanner.next().charAt(0);
+        System.out.println("Enter two numbers:");
+        double num1 = scanner.nextDouble();
+        double num2 = scanner.nextDouble();
+        double result = 0;
+        switch (action){
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2!=0){
+                    result = num1 / num2;
+                }else {
+                    System.out.println("Division by zero is not allowed");
+                }
+                break;
+            default:
+                System.out.println("Invalid action");
+        }
+        System.out.println("The result is: " + result);
+    }
+
+    public static void season(){
+        System.out.println("Enter a number month:");
+        int month = scanner.nextInt();
+        String season = "";
+        switch (month){
+            case 12:
+            case 1:
+            case 2:
+                season = "Winter";
+                break;
+            case 3:
+            case 4:
+            case 5:
+                season = "Spring";
+                break;
+            case 6:
+            case 7:
+            case 8:
+                season = "Summer";
+                break;
+            case 9:
+            case 10:
+            case 11:
+                season = "Autumn";
+                break;
+            default:
+                season = "Invalid month";
+        }
+        System.out.println("The season is: " + season);
+    }
+
+    public static void estimate(){
+        System.out.println("Enter a number:");
+        int num = scanner.nextInt();
+        switch (num){
+            case 2:
+                System.out.println("Bad");
+                break;
+            case 3:
+                System.out.println("Poor");
+                break;
+            case 4:
+                System.out.println("Satisfactory");
+                break;
+            case 5:
+                System.out.println("Good");
+                break;
+            default:
+                System.out.println("Invalid number");
+        }
+    }
+
+    public static void dayWeek(){
+        System.out.println("Enter a number day of the week:");
+        int day = scanner.nextInt();
+        String dayWeek = "";
+        switch (day){
+            case 1:
+                dayWeek = "Monday";
+                break;
+            case 2:
+                dayWeek = "Tuesday";
+                break;
+            case 3:
+                dayWeek = "Wednesday";
+                break;
+            case 4:
+                dayWeek = "Thursday";
+                break;
+            case 5:
+                dayWeek = "Friday";
+                break;
+            case 6:
+                dayWeek = "Saturday";
+                break;
+            case 7:
+                dayWeek = "Sunday";
+                break;
+            default:
+                dayWeek = "Invalid day";
+        }
+        System.out.println("The day of the week is: " + dayWeek);
+    }
+
+    public static void currencies(){
+        System.out.println("Enter a currencies: ");
+        scanner.nextLine();
+        String currency = scanner.nextLine();
+        switch (currency){
+            case "USD":
+                System.out.println("United States Dollar");
+                break;
+            case "EUR":
+                System.out.println("Euro");
+                break;
+            case "GBP":
+                System.out.println("British Pound Sterling");
+                break;
+            case "INR":
+                System.out.println("Indian Rupee");
+                break;
+            case "AUD":
+                System.out.println("Australian Dollar");
+                break;
+            case "CAD":
+                System.out.println("Canadian Dollar");
+                break;
+            case "SGD":
+                System.out.println("Singapore Dollar");
+                break;
+            case "CHF":
+                System.out.println("Swiss Franc");
+                break;
+            case "MYR":
+                System.out.println("Malaysian Ringgit");
+                break;
+            case "JPY":
+                System.out.println("Japanese Yen");
+                break;
+            default:
+                System.out.println("Invalid currency");
+        }
+
+    }
+
+    public static void checkNumPrimeness(){
+        System.out.println("Enter a number :");
+        int num = scanner.nextInt();
+        if (num/1==num && num/num==1){
+            System.out.println("The number is prime");}
+        else {
+            System.out.println("The number is not prime");
+        }
+    }
+
+    public static void sortNums(){
+        System.out.println("Enter three numbers:");
+        int num1 = scanner.nextInt();
+        int num2 = scanner.nextInt();
+        int num3 = scanner.nextInt();
+        if (num1>num2 && num1>num3 && num2>num3){
+            System.out.println(num1 + " " + num2 + " " + num3);
+        } else if (num1>num2 && num1>num3 && num3>num2){
+            System.out.println(num1 + " " + num3 + " " + num2);
+        } else if (num2>num1 && num2>num3 && num1>num3){
+            System.out.println(num2 + " " + num1 + " " + num3);
+        } else if (num2>num1 && num2>num3 && num3>num1){
+            System.out.println(num2 + " " + num3 + " " + num1);
+        } else if (num3>num1 && num3>num2 && num1>num2){
+            System.out.println(num3 + " " + num1 + " " + num2);
+        } else {
+            System.out.println(num3 + " " + num2 + " " + num1);
+        }
+    }
+
+    public static double tempConvert(){
+        System.out.println("Enter a temperature:");
+        double temp = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Enter a scale (C or F):");
+        char scale = scanner.nextLine().charAt(0);
+        double result = 0;
+        if (scale == 'C'){
+            result = temp * 9/5 + 32;
+        }else if (scale == 'F'){
+            result = (temp - 32) * 5/9;
+        }
+        return result;
+    }
 
 }

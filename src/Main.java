@@ -2,10 +2,61 @@ public class Main {
     public static void main(String[] args) {
 //        Main main = new Main();
 //        main.run();
-        Integer n =10;
-        System.out.println(n);
-        n=11;
-        System.out.println(n);
+//        int x;
+//        int y;
+//        int sum;
+//
+//        x=9;
+//        y=11;
+//
+//        sum=x+y;
+//        System.out.println("x="+x);
+//
+//        int numberOfSeconds=0;
+//        int hour,min,sec;
+//        int saveNumberOfSeconds=numberOfSeconds;
+//        numberOfSeconds=3405;
+//        saveNumberOfSeconds=numberOfSeconds;
+//
+//        if ((numberOfSeconds>86400) || (numberOfSeconds<0)){
+//            System.out.println("Invalid value");
+//            return;
+//        }
+//
+//        hour=numberOfSeconds/3600;
+//        numberOfSeconds=numberOfSeconds-hour*3600;
+//        min=numberOfSeconds/60;
+//        numberOfSeconds=numberOfSeconds-min*60;
+//        sec=numberOfSeconds;
+//        System.out.println("In "+saveNumberOfSeconds+" seconds: "+hour+" h "+min+" minutes and "+sec+" seconds");
+
+        int a = 16, b = 18, c = 11, d = 3;
+
+        int count = 0;
+
+        if (a % 2 == 0) {
+            count++;
+        }
+
+        if (b % 2 == 0) {
+            count++;
+        }
+
+        if (c % 2 == 0) {
+            count++;
+        }
+
+        if (d % 2 == 0) {
+            count++;
+        }
+
+        if (count >= 2) {
+            System.out.println("YES. There are more than two even numbers in the sequence.");
+
+        } else {
+            System.out.println("NO. There are no more than two even numbers in the sequence.");
+        }
+
     }
     private void run() {
         int n = 6;
@@ -21,4 +72,7 @@ public class Main {
             System.out.println();
         }
     }
+
+
+
 }
