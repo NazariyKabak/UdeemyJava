@@ -8,14 +8,12 @@ public class Main {
 
     public static void main(String[] args) {
         Main main = new Main();
-        main.wb6_12();
+        main.run();
     }
 
     private void run() {
-        String[] students = {"Malfoy", "Crabbe", "Goyle", "Pansy", "Dean"};
-        for (int i = 0; i < students.length; i++) {
-            System.out.println(students[i] + ", you will take seat " + i);
-        }
+        int [] arr= {1, 2, 3};
+        System.out.println(Arrays.toString(task8(arr)));
     }
 
     private void run2() {
@@ -565,6 +563,136 @@ public class Main {
             }
             System.out.println();
         }
+    }
+
+    public static int[] task1(int [] arr){
+        int min = arr[0];
+        int max = arr[0];
+        for (int i = 0; i<arr.length;i++){
+            if (arr[i] < min){
+                min = arr[i];
+            }
+            if (arr[i] > max){
+                max = arr[i];
+            }
+        }
+        return new int[]{min, max};
+    }
+
+    public static int task2(int [] arr){
+        int sum=0;
+        for (int element : arr){
+            sum+=element;
+        }
+        return sum;
+    }
+
+    public static double task3(double [] arr){
+        double sum = 0;
+        for (double element : arr){
+            sum+=element;
+        }
+        return sum/arr.length;
+    }
+
+    public static int [] task4(int [] arr){
+        int countEven = 0;
+        int countOdd = 0;
+        for (int element : arr){
+            if (element % 2 == 0){
+                countEven++;
+            }else {
+                countOdd++;
+            }
+        }
+        return new int[]{countEven, countOdd};
+    }
+
+    public static double [] task5(double [] arr) {
+        int unique = 0;
+        double[] temp = new double[arr.length];
+        for (int i = 0; i <arr.length; i++) {
+            boolean isUnique = true;
+            for (int j = 0; j < arr.length; j++) {
+                if (i!=j && arr[i] == arr[j]){
+                    isUnique = false;
+                    break;
+                }
+            }
+            if (isUnique){
+                temp[unique++] = arr[i];
+            }
+
+        }
+        double [] result = new double[unique];
+        System.arraycopy(temp, 0, result, 0, unique);
+        return result;
+    }
+
+    public static int [] task6(int [] arr){
+        int [] reversed = new int[arr.length];
+        for (int i=0; i<arr.length;i++){
+            reversed[i] = arr[arr.length-1-i];
+        }
+        return reversed;
+    }
+
+    public static void task7(int [] arr){
+        boolean isPalindrome = true;
+        for (int i = 0; i < arr.length/2; i++) {
+            if (arr[i] != arr[arr.length-1-i]){
+                isPalindrome = false;
+                break;
+            }
+        }
+        if (isPalindrome){
+            System.out.println("Palindrome");}
+        else {
+            System.out.println("Not a palindrome");
+        }
+    }
+
+    public static int [] task8(int [] arr){
+        int [] result = new int[arr.length];
+        result[0] = arr[arr.length-1];
+        for (int i = 1; i < arr.length; i++) {
+            result[i] = arr[i-1];
+        }
+        return result;
+    }
+
+    public static int [] task9(int [] arr1, int [] arr2){
+        int [] newArr = new int[arr1.length + arr2.length];
+        System.arraycopy(arr1, 0, newArr, 0, arr1.length);
+        System.arraycopy(arr2, 0, newArr, arr1.length + 1, arr2.length);
+        return newArr;
+    }
+
+    public static int [] task10(int [] arr){
+        int duplicates = 0;
+        int [] temp = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            boolean isDuplicate = false;
+            for (int j = 0; j < arr.length; j++) {
+                if (i!=j && arr[i] == arr[j]){
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (isDuplicate){
+                temp[duplicates++] = arr[i];
+            }
+        }
+        int [] result = new int[duplicates];
+        System.arraycopy(temp, 0, result, 0, duplicates);
+        return result;
+    }
+
+    public static int[] task11(int [] arr){
+        int [] sortArr = new int[arr.length];
+        System.arraycopy(arr, 0, sortArr, 0, arr.length);
+        Arrays.sort(sortArr);
+        return sortArr;
     }
 
 }

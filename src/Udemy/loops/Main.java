@@ -3,63 +3,13 @@ package Udemy.loops;
 import java.util.Scanner;
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
     Main main = new Main();
     main.run();
     }
     private void run() {
-//        int secret=5;
-//        String login="neyzr_11";
-//        String password="zamiokulkos11";
-//        Scanner scanner = new Scanner(System.in);
-//        String loginInput = scanner.nextLine();
-//        String passwordInput = scanner.nextLine();
-
-//        int n = scanner.nextInt();
-//        for (int i = 0; i <= n; i++) {
-//            System.out.println(i);
-//        }
-//        calc();
-//        for (int i=0; i<=18; i++) {
-//            if (i % 3 == 0) {
-//                System.out.println("Fizz:"+i);
-//            }
-//            if (i % 5 == 0) {
-//                System.out.println("Buzz:"+i);
-//            }
-//            if (i % 3 == 0 && i % 5 == 0) {
-//                System.out.println("FizzBuzz:"+i);
-//            }
-//        }
-
-//        while (n!=secret) {
-//            System.out.print("Guess Again:");
-//            n = scanner.nextInt();
-//        }
-//        System.out.println("Win!");
-//        while (!loginInput.equals(login) && !passwordInput.equals(password)) {
-//            System.out.println("Wrong login or password");
-//            loginInput = scanner.nextLine();
-//            passwordInput = scanner.nextLine();
-//        }
-//        System.out.println("Welcome!");
-//        int num1=roll();
-//        int num2=roll();
-//
-//        while (num1!=num2){
-//            System.out.print(num1+" ");
-//            System.out.print(num2+" | ");
-//            num1=roll();
-//            num2=roll();
-//
-//        }
-//        System.out.println(" " +num1+"=="+num2);
-//        for (int i=0;i<3;i++){
-//            for (int j=0;j<3;j++){
-//                System.out.println("*");
-//            }
-//        }
-        wb5_11();
+        task12();
     }
 
     public static int roll(){
@@ -249,5 +199,134 @@ public class Main {
         System.out.println("Pts "+ points);
     }
 
+    public static void task1(){
+        System.out.println("Enter a number:");
+        int n = scanner.nextInt();
+        for (int i = 1; i <= n; i++) {
+            System.out.println(i);
+        }
+    }
 
+    public static int task2(){
+        int n = scanner.nextInt();
+        int sum=0;
+        for (int i = 1; i <= n; i++) {
+            sum+=i;
+        }
+        return sum;
+    }
+
+    public static int task3(){
+        int n = scanner.nextInt();
+        int factorial=1;
+        for (int i = 1; i <= n; i++) {
+            factorial*=i;
+        }
+        return factorial;
+    }
+
+    public static void task4(){
+        int n = scanner.nextInt();
+
+        for (int i = 1;i<=10; i++){
+            System.out.println(n+" x "+i+" = "+n*i);
+        }
+    }
+
+
+    public static void task5(){
+        int n = scanner.nextInt();
+        for (int i = 1; i <= n; i++) {
+            if (i%2==0){
+                System.out.println(i);
+            }
+        }
+        for (int i = 1; i <= n; i++) {
+            if (i%2!=0){
+                System.out.println(i);
+            }
+        }
+    }
+    public static int task6(){
+        int n = scanner.nextInt();
+        int sum=0;
+        while (n!=0){
+            int digit = n%10;
+            sum+=digit;
+            n/=10;
+        }
+        return sum;
+    }
+
+    public static void task7(){
+        int n = scanner.nextInt();
+        if (n < 2) {
+            System.out.println("Not prime");
+            return;
+        }
+
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                System.out.println("Not prime");
+                return;
+            }
+        }
+
+        System.out.println("Prime");
+    }
+
+    public static void task8(){
+        int n = scanner.nextInt();
+        while (n!=0){
+            int digit = n%10;
+            String reverse = String.valueOf(digit);
+            System.out.print(reverse);
+            n/=10;
+        }
+    }
+
+    public static void task9(){
+        int n = scanner.nextInt();
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void task10(){
+        int n = scanner.nextInt();
+        int n1=0;
+        int n2=1;
+        int next;
+        for (int i = 1; i <= n; i++) {
+            System.out.print(n1+" ");
+            next=n1+n2;
+            n1=n2;
+            n2=next;
+        }
+    }
+
+    public static void task11(){
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int gcd=1;
+        for (int i = 1; i <= a && i <= b; i++) {
+            if (a%i==0 && b%i==0){
+                gcd=i;
+            }
+        }
+        System.out.println(gcd);
+    }
+
+    public static void task12(){
+        int n = scanner.nextInt();
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print(" * ");
+            }
+            System.out.println();
+        }
+    }
 }
