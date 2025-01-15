@@ -12,8 +12,8 @@ public class Main {
     }
 
     private void run() {
-        int [] arr= {1, 2, 3};
-        System.out.println(Arrays.toString(task8(arr)));
+        int [] arr= {1, 2, 2, 3, 4, 4, 5};
+        System.out.println(Arrays.toString(task14(arr)));
     }
 
     private void run2() {
@@ -664,7 +664,7 @@ public class Main {
     public static int [] task9(int [] arr1, int [] arr2){
         int [] newArr = new int[arr1.length + arr2.length];
         System.arraycopy(arr1, 0, newArr, 0, arr1.length);
-        System.arraycopy(arr2, 0, newArr, arr1.length + 1, arr2.length);
+        System.arraycopy(arr2, 0, newArr, arr1.length, arr2.length);
         return newArr;
     }
 
@@ -679,7 +679,7 @@ public class Main {
                     break;
                 }
             }
-            if (isDuplicate){
+            if (!isDuplicate){
                 temp[duplicates++] = arr[i];
             }
         }
@@ -694,5 +694,65 @@ public class Main {
         Arrays.sort(sortArr);
         return sortArr;
     }
+
+    public static int task12(int [] arr){
+        int secondMax = Integer.MIN_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int element : arr){
+            if (element > max){
+                secondMax = max;
+                max = element;
+            }else if (element > secondMax && element != max){
+                secondMax = element;
+            }
+        }
+        return secondMax;
+
+    }
+
+    public static int[] task13(int [] arr){
+        int [] newArr = new int[arr.length];
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        for (int element : arr) {
+            if (element > max){
+                max = element;
+            }
+            if (element < min){
+                min = element;
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == max){
+                newArr[i] = min;
+            }else if (arr[i] == min){
+                newArr[i] = max;
+            }else {
+                newArr[i] = arr[i];
+            }
+        }
+        return newArr;
+    }
+
+    public static int [] task14(int [] arr){
+        return Arrays.stream(arr).distinct().toArray();
+    }
+
+    public static int [] task15(int [] arr){
+        int positive = 0;
+        int negative = 0;
+        int zero = 0;
+        for (int element : arr) {
+            if (element > 0){
+                positive++;
+            }else if (element < 0){
+                negative++;
+            }else {
+                zero++;
+            }
+        }
+        return new int[]{positive, negative, zero};
+    }
+
 
 }
