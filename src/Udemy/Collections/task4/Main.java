@@ -5,45 +5,14 @@ import java.util.*;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-//        ArrayList<Integer> nums = new ArrayList<>();
-//        while (scanner.hasNextInt()) {
-//            int n = scanner.nextInt();
-//            nums.add(n);
-//        }
-//        addNumbersSort(nums);
-//        for (int num : nums) {
-//            System.out.println(num);
-//        }
-
-//        ArrayList<String> names = new ArrayList<>();
-//        names.add("John");
-//        names.add("Adam");
-//        names.add("Eve");
-//        for (String name : names) {
-//            System.out.println(name);
-//        }
-//        replacingElements(names);
-//        for (String name : names) {
-//            System.out.println(name);
-//        }
-//        ArrayList<Integer> list1 = new ArrayList<>(List.of(1, 2, 3, 4, 5));
-//        LinkedList<Integer> list2 = new LinkedList<>(List.of(6, 7, 8, 9, 10));
-//        System.out.println(mergeLists(list1, list2));
-//        removeElenents(list1);
-//        for (int num : list1) {
-//            System.out.println(num);
-//        }
-        ArrayList<Integer> list = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12));
-//        magicList(list);
-//        for (int num : list) {
-//            System.out.println("Magic list:"+ num);
-//        }
-//        ArrayList<String> palidromWord = new ArrayList<>(List.of("madam", "hello", "world", "level"));
-//        checkPalindrome(palidromWord);
-//        System.out.println(reverseList(list));
-
-        ArrayList<String> names = new ArrayList<>(List.of("John", "Eve", "John", "Adam", "Eve", "John", "Adam", "Eve", "Eve"));
-        System.out.println(frequentElement(names));
+//        LinkedList<Integer> list = new LinkedList<>(List.of(1,2,3,4,2,3,4,5,3,4,8,9,8));
+//        System.out.println(task5(list, 3));
+//        ArrayList<Integer> list1 = new ArrayList<>(List.of(1,2,3,4,5,6,7,8,9,10));
+//        System.out.println(task6(list1, 5));
+//        LinkedList<Integer> list2 = new LinkedList<>();
+//        task7(list2);
+        ArrayList<Integer> list3 = new ArrayList<>();
+        task8(list3);
 
     }
 
@@ -131,5 +100,91 @@ public class Main {
         }
         return mostFrequent;
     }
+
+    public static void task1(LinkedList<String> names){
+        names.add("Anna");                      // В кінець списку
+        names.addFirst("John");                 // На початок списку
+        names.addLast("Maria");                 // В кінець списку
+        names.add(1, "Peter");                  // В позицію 1
+        names.add("Olivia");
+        names.add("James");
+        names.add(3, "Sophia");                 // В позицію 3
+        names.addFirst("Michael");
+        names.addLast("Emma");
+        names.add(5, "Isabella");
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+    public static void task2(ArrayList<Integer> list){
+       for (int i = 0; i < 10; i++) {
+           list.add(i);
+       }
+       list.remove(3);
+        for (Integer i : list) {
+            System.out.println(i);
+        }
+    }
+
+    public static void task3(LinkedList<Integer> list){
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            list.add(random.nextInt(100));
+        }
+        System.out.println("Прямий порядок: ");
+        ListIterator<Integer> iterator = list.listIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        System.out.println("Зворотній порядок: ");
+        while (iterator.hasPrevious()) {
+            System.out.println(iterator.previous());
+        }
+    }
+
+    public static void task4(ArrayList<Integer> list){
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            list.add(random.nextInt(100));
+        }
+        System.out.println("Even numbers: ");
+        list.forEach(num -> {
+            if (num % 2 == 0) {
+                System.out.println(num);
+            }
+        });
+    }
+
+    public static int task5(LinkedList<Integer> list, int value){
+        return list.indexOf(value);
+    }
+
+    public static boolean task6(ArrayList<Integer> list, int value){
+        return list.contains(value);
+    }
+
+    public static void task7(LinkedList<Integer> list){
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            list.add(random.nextInt(100));
+        }
+
+        Collections.sort(list);
+        list.forEach(System.out::println);
+
+        Collections.sort(list, Collections.reverseOrder());
+        list.forEach(System.out::println);
+    }
+
+    public static void task8(ArrayList<Integer> list){
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            list.add(random.nextInt(100));
+        }
+        Collections.reverse(list);
+        list.forEach(System.out::println);
+    }
+
+    
 
 }

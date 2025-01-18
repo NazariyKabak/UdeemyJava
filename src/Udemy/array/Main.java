@@ -12,8 +12,8 @@ public class Main {
     }
 
     private void run() {
-        int [] arr= {1, 2, 2, 3, 4, 4, 5};
-        System.out.println(Arrays.toString(task14(arr)));
+        int [] arr= {1, 0, 0, 1, 2, 3,6,6,9};
+        System.out.println(Arrays.toString(task10(arr)));
     }
 
     private void run2() {
@@ -652,6 +652,7 @@ public class Main {
         }
     }
 
+
     public static int [] task8(int [] arr){
         int [] result = new int[arr.length];
         result[0] = arr[arr.length-1];
@@ -669,22 +670,30 @@ public class Main {
     }
 
     public static int [] task10(int [] arr){
-        int duplicates = 0;
-        int [] temp = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
+        int[] temp = new int[arr.length];
+        int uniqueCount = 0;
+
+        for (int k : arr) {
             boolean isDuplicate = false;
-            for (int j = 0; j < arr.length; j++) {
-                if (i!=j && arr[i] == arr[j]){
+
+            // Перевіряємо, чи елемент уже є в унікальному масиві
+            for (int j = 0; j < uniqueCount; j++) {
+                if (k == temp[j]) {
                     isDuplicate = true;
                     break;
                 }
             }
-            if (!isDuplicate){
-                temp[duplicates++] = arr[i];
+
+            // Якщо елемент не дублюється, додаємо його в тимчасовий масив
+            if (!isDuplicate) {
+                temp[uniqueCount++] = k;
             }
         }
-        int [] result = new int[duplicates];
-        System.arraycopy(temp, 0, result, 0, duplicates);
+
+        // Створюємо масив результатів потрібного розміру
+        int[] result = new int[uniqueCount];
+        System.arraycopy(temp, 0, result, 0, uniqueCount);
+
         return result;
     }
 
@@ -752,6 +761,47 @@ public class Main {
             }
         }
         return new int[]{positive, negative, zero};
+    }
+
+    public static int  task16(int [] arr){
+        int sum1 =0;
+        int sum2 = 0;
+        for (int i = 0; i<arr.length/2; i++){
+            sum1+=arr[i];
+        }
+        for (int i = arr.length/2; i<arr.length; i++){
+            sum2+=arr[i];
+        }
+        return Math.max(sum1, sum2);
+
+
+    }
+
+    public static int [] task17(int [] arr){
+        int [] reversedArr = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            reversedArr[i] = arr[arr.length-1-i];
+        }
+        return reversedArr;
+    }
+
+    public static int [] task18(int [] arr1, int [] arr2){
+        int [] newArr = new int[arr1.length + arr2.length];
+        System.arraycopy(arr1, 0, newArr, 0, arr1.length);
+        System.arraycopy(arr2, 0, newArr, arr1.length + 1, arr2.length);
+        return newArr;
+    }
+
+    public static boolean task19(int [] arr){
+        int target = 9;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == target){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 
