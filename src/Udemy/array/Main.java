@@ -804,5 +804,93 @@ public class Main {
         return false;
     }
 
+    public static void bubleSort(int [] arr){
+    Boolean isSort = false;
+    
+    while(!isSort){
+      isSort = true;
+      for(int i=0; i<arr.length-1;i++){
+      if(arr[i]>arr[i+1]){
+        isSort = false;
+        int temp = arr[i];
+        arr[i] = arr[i+1];
+        arr[i+1] = temp;
+      }
+    }
+    }
+    for(int e: arr){
+      System.out.println(e);
+    }
+  }
+  
+  public static int[] selectSort(int [] arr){
+    for(int i=0;i<arr.length; i++){//5
+      int min = arr[i];//9
+      int min_index = i;//5
+      for(int j =i+1; j<arr.length;j++){//6==7
+        if(arr[j]<min){
+          min=arr[j];//7
+          min_index=j;//6
+        }
+      }
+      if(i!=min_index){
+        int temp = arr[i];//9
+        arr[i] = arr[min_index];//7
+        arr[min_index]=temp;//9
+      }
+    }
+    return arr;
+  }
+  
+  public static int[] bubleSort2(int [] arr){
+    for (int i=0;i<arr.length-1 ;i++ ){
+      for(int j=0; j<arr.length-i-1; j++){
+        if(arr[j]>arr[j+1]){
+          int temp = arr[j];
+          arr[j]=arr[j+1];
+          arr[j+1] = temp;
+        }
+      }
+      
+    } 
+    return arr;
+    
+  }
+  
+  public static int [] insertionSort(int [] arr){
+    int key;
+    for(int i=1; i<arr.length; i++){//1=5
+      key = arr[i];//5
+      int j = i-1;//0
+      while(j>=0 && arr[j]>key){
+        arr[j+1]=arr[j];//4
+        j=j-1;//-1
+      }
+      arr[j+1] = key;
+    }
+    return arr;
+  }
+  
+  public static int [] shelSort(int [] arr){
+    int h=1;
+    int n = arr.length;
+    while(h<n/3){
+      h=3*h+1;
+    }
+    while(h>=1){
+      for(int i=h;i<arr.length; i++){
+        for(int j=i; j>=h && arr[j]> arr[j-h]; j-=h){
+          int temp = arr[j];
+          arr[j]=arr[j-h];
+          arr[j-h] = temp;
+        }
+      }
+    h=h/3;  
+    }
+    return arr;
+    
+  }
+}
+
 
 }
