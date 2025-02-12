@@ -12,8 +12,12 @@ public class Main {
     }
 
     private void run() {
-        int [] arr= {1, 0, 0, 1, 2, 3,6,6,9};
-        System.out.println(Arrays.toString(task10(arr)));
+        int[][] arr = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+        System.out.println(Arrays.toString(task24(arr)));
     }
 
     private void run2() {
@@ -803,6 +807,102 @@ public class Main {
         }
         return false;
     }
+
+    public static void task20(int [][] arr){
+        for (int i = 0; i < arr.length; i++) {
+            int sumRow = 0;
+            for (int j = 0; j <arr[i].length ; j++) {
+                sumRow+=arr[i][j];
+            }
+            System.out.println("Sum of row "+i+" is "+sumRow);
+
+        }
+    }
+
+    public static void task21(int [][] arr){
+        for (int i = 0; i < arr[0].length; i++) {
+            int sumColumn = 0;
+            for (int j = 0; j < arr.length; j++) {
+                sumColumn+=arr[j][i];
+            }
+            System.out.println("Sum of column "+i+" is "+sumColumn);
+        }
+    }
+
+    public static void task22(int [][] arr){
+        int sumDiagonal1 = 0;
+        int sumDiagonal2 = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sumDiagonal1+=arr[i][i];
+            sumDiagonal2+=arr[i][arr.length-1-i];
+        }
+        System.out.println("Sum of diagonal 1 is "+sumDiagonal1);
+        System.out.println("Sum of diagonal 2 is "+sumDiagonal2);
+    }
+
+
+    public static void task23(int [][] arr){
+        int sumLeftDiagonal = 0;
+        int sumRightDiagonal = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (i == j){
+                    sumLeftDiagonal+=arr[i][j];
+                }
+
+                if (i+j == arr.length-1){
+                    sumRightDiagonal+=arr[i][j];
+                }
+            }
+
+        }
+        System.out.println("Sum of left diagonal is "+sumLeftDiagonal);
+        System.out.println("Sum of right diagonal is "+sumRightDiagonal);
+    }
+
+
+    public static int [][] task24(int [][] arr){
+        int [][]transposedMatrix = new int[][]{new int[arr.length]};
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                transposedMatrix[j][i] = arr[i][j];
+            }
+        }
+        return transposedMatrix;
+    }
+
+
+    public static int [] task26(int [][] arr1, int [][] arr2){
+        int [] multipliedMatrix = new int[arr1.length];
+        for (int i = 0; i < arr1.length; i++) {
+            multipliedMatrix[i] = arr1[i][i] * arr2[i][i];
+        }
+        return multipliedMatrix;
+    }
+
+    public static void task27(int [][] arr){
+        for (int i = 0; i < arr.length; i++) {
+            int minElementInRow = arr[i][0];
+            for (int j = 0; j <arr[i].length ; j++) {
+                int maxElementInColumn = arr[0][j];
+                if (arr[i][j] < minElementInRow){
+                    minElementInRow = arr[i][j];
+                }
+                if (arr[j][i] > maxElementInColumn){//4>1
+                    maxElementInColumn = arr[j][i];
+                }
+                System.out.println("Min element in row "+i+" is "+minElementInRow);
+                System.out.println("Max element in column "+i+" is "+maxElementInColumn);
+            }
+        }
+    }
+
+
+
+
+
+
+
 
 
 }
