@@ -1,4 +1,4 @@
-package CodeWars.lvl8;
+package CodeWars.lvl8.Algorithms;
 
 import java.util.ArrayList;
 import java.util.Arrays;
