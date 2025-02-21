@@ -12,7 +12,7 @@ public class Main {
 //        LinkedList<Integer> list2 = new LinkedList<>();
 //        task7(list2);
 //        ArrayList<Integer> list3 = new ArrayList<>();
-        task9(list1, list);
+        task21(list1);
 
     }
 

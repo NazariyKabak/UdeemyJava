@@ -8,10 +8,8 @@ public class Main {
         main.run();
     }
     public void run() {
-        int[] points1 = {3, 4, 7, 10};
-        int[] points2 = {1, 2, 1, 5};
-        System.out.println(calculateSlope(points1));
-        System.out.println(calculateSlope(points2));
+        String original = "The quick brown fox jumps over the lazy dog.";
+        System.out.println(reverseWords(original));
     }
 
     public static String calculateSlope(int[] points) {
@@ -39,6 +37,22 @@ public class Main {
             return 0;
         }
 
+    }
+
+
+    public static String reverseWords(final String original) {
+        if (original.isEmpty()) return original;
+
+        String[] words = original.split("(?<= )|(?= )");
+        StringBuilder reversed = new StringBuilder();
+        for (String word : words) {
+            if (word.isBlank()) {
+                reversed.append(word);
+            } else {
+                reversed.append(new StringBuilder(word).reverse());
+            }
+        }
+        return reversed.toString().trim();
     }
 
 }
