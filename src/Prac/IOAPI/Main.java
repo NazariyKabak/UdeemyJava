@@ -150,4 +150,30 @@ public class Main {
             return null;
         }
     }
+
+     public static void byteWriteInFile(String path){
+        try (FileOutputStream fos = new FileOutputStream(path)){
+            byte[] data = {97,69,78};
+            fos.write(data);
+            System.out.println("Complete file!");
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+     }
+
+
+     public static void byteReadInFile(String path){
+        try (FileInputStream fis = new FileInputStream(path)){
+            int byteData;
+            while ((byteData = fis.read())!=-1){
+                System.out.println((char) byteData);
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+     }
+
+
+
 }

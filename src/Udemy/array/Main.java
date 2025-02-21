@@ -12,7 +12,7 @@ public class Main {
     }
 
     private void run() {
-        int [] arr= {1, 0, 0, 1, 2, 3,6,6,9};
+        int[] arr = {1, 0, 0, 1, 2, 3, 6, 6, 9};
         System.out.println(Arrays.toString(task10(arr)));
     }
 
@@ -466,7 +466,7 @@ public class Main {
 
     }
 
-    public void wb6_6(int[] arr){
+    public void wb6_6(int[] arr) {
         int seat = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > arr[seat]) {
@@ -476,7 +476,7 @@ public class Main {
         System.out.println("The highest score is " + arr[seat] + " and the seat is " + seat);
     }
 
-    public void wb6_7(){
+    public void wb6_7() {
         String[] record = {"WIN", "WIN", "WIN", "LOSS", "WIN", "WIN", "LOSS"};
         int wins = 0;
         int losses = 0;
@@ -491,7 +491,7 @@ public class Main {
         System.out.println("Losses: " + losses);
     }
 
-    public void wb6_8(){
+    public void wb6_8() {
         String[] apples = {"Gala", "Granny Smith", "Macintosh"};
         double[] price = {1.99, 1.49, 1.29};
         for (int i = 0; i < apples.length; i++) {
@@ -499,7 +499,7 @@ public class Main {
         }
     }
 
-    public void wb6_9(){
+    public void wb6_9() {
         double[] price = {1.99, 2.99, 3.99, 4.99};
         double[] afterTax = new double[price.length];
         for (int i = 0; i < price.length; i++) {
@@ -509,8 +509,8 @@ public class Main {
         }
     }
 
-    public void wb6_10(){
-        String []toppings = new String[5];
+    public void wb6_10() {
+        String[] toppings = new String[5];
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < toppings.length; i++) {
             System.out.println("Enter topping " + i);
@@ -520,8 +520,8 @@ public class Main {
     }
 
 
-    public void wb6_11(double [] celcius){
-        double [] farenheit = new double[celcius.length];
+    public void wb6_11(double[] celcius) {
+        double[] farenheit = new double[celcius.length];
         for (int i = 0; i < farenheit.length; i++) {
             farenheit[i] = celcius[i];
             farenheit[i] = (celcius[i] / 5 * 9) + 32;
@@ -529,32 +529,34 @@ public class Main {
         printTemperature(celcius, "Celcius");
         printTemperature(farenheit, "Farenheit");
     }
-    public void wb6_12(){
-        int [] ticket = {34, 43, 45, 65, 21, 54};
-        int [] ticket2 = Arrays.copyOf(ticket, ticket.length);
+
+    public void wb6_12() {
+        int[] ticket = {34, 43, 45, 65, 21, 54};
+        int[] ticket2 = Arrays.copyOf(ticket, ticket.length);
         printTicketNumbers(ticket);
         printTicketNumbers(ticket2);
 
     }
-    public void printTicketNumbers(int [] arr){
+
+    public void printTicketNumbers(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+ " ");
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
 
-    public void wb6_13(){
-        double [][] nums = {
+    public void wb6_13() {
+        double[][] nums = {
                 {12.99, 8.99, 9.99, 10.49, 11.99},
                 {0.99, 1.99, 2.49, 1.49, 2.99},
                 {8.99, 7.99, 9.49, 9.99, 10.99}
         };
-        System.out.println("Baking"+ nums[0][0]+ " "+ nums[0][1]+ " "+ nums[0][2]+ " "+ nums[0][3]+ " "+ nums[0][4]);
-        System.out.println("Beverage"+ nums[1][0]+ " "+ nums[1][1]+ " "+ nums[1][2]+ " "+ nums[1][3]+ " "+ nums[1][4]);
-        System.out.println("Cereals"+ nums[2][0]+ " "+ nums[2][1]+ " "+ nums[2][2]+ " "+ nums[2][3]+ " "+ nums[2][4]);
+        System.out.println("Baking" + nums[0][0] + " " + nums[0][1] + " " + nums[0][2] + " " + nums[0][3] + " " + nums[0][4]);
+        System.out.println("Beverage" + nums[1][0] + " " + nums[1][1] + " " + nums[1][2] + " " + nums[1][3] + " " + nums[1][4]);
+        System.out.println("Cereals" + nums[2][0] + " " + nums[2][1] + " " + nums[2][2] + " " + nums[2][3] + " " + nums[2][4]);
     }
 
-    public void wb6_14(int [] []arr){
+    public void wb6_14(int[][] arr) {
 
         for (int r = 0; r < arr.length; r++) {
             for (int c = 0; c < arr[r].length; c++) {
@@ -565,111 +567,111 @@ public class Main {
         }
     }
 
-    public static int[] task1(int [] arr){
+    public static int[] task1(int[] arr) {
         int min = arr[0];
         int max = arr[0];
-        for (int i = 0; i<arr.length;i++){
-            if (arr[i] < min){
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
                 min = arr[i];
             }
-            if (arr[i] > max){
+            if (arr[i] > max) {
                 max = arr[i];
             }
         }
         return new int[]{min, max};
     }
 
-    public static int task2(int [] arr){
-        int sum=0;
-        for (int element : arr){
-            sum+=element;
+    public static int task2(int[] arr) {
+        int sum = 0;
+        for (int element : arr) {
+            sum += element;
         }
         return sum;
     }
 
-    public static double task3(double [] arr){
+    public static double task3(double[] arr) {
         double sum = 0;
-        for (double element : arr){
-            sum+=element;
+        for (double element : arr) {
+            sum += element;
         }
-        return sum/arr.length;
+        return sum / arr.length;
     }
 
-    public static int [] task4(int [] arr){
+    public static int[] task4(int[] arr) {
         int countEven = 0;
         int countOdd = 0;
-        for (int element : arr){
-            if (element % 2 == 0){
+        for (int element : arr) {
+            if (element % 2 == 0) {
                 countEven++;
-            }else {
+            } else {
                 countOdd++;
             }
         }
         return new int[]{countEven, countOdd};
     }
 
-    public static double [] task5(double [] arr) {
+    public static double[] task5(double[] arr) {
         int unique = 0;
         double[] temp = new double[arr.length];
-        for (int i = 0; i <arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             boolean isUnique = true;
             for (int j = 0; j < arr.length; j++) {
-                if (i!=j && arr[i] == arr[j]){
+                if (i != j && arr[i] == arr[j]) {
                     isUnique = false;
                     break;
                 }
             }
-            if (isUnique){
+            if (isUnique) {
                 temp[unique++] = arr[i];
             }
 
         }
-        double [] result = new double[unique];
+        double[] result = new double[unique];
         System.arraycopy(temp, 0, result, 0, unique);
         return result;
     }
 
-    public static int [] task6(int [] arr){
-        int [] reversed = new int[arr.length];
-        for (int i=0; i<arr.length;i++){
-            reversed[i] = arr[arr.length-1-i];
+    public static int[] task6(int[] arr) {
+        int[] reversed = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            reversed[i] = arr[arr.length - 1 - i];
         }
         return reversed;
     }
 
-    public static void task7(int [] arr){
+    public static void task7(int[] arr) {
         boolean isPalindrome = true;
-        for (int i = 0; i < arr.length/2; i++) {
-            if (arr[i] != arr[arr.length-1-i]){
+        for (int i = 0; i < arr.length / 2; i++) {
+            if (arr[i] != arr[arr.length - 1 - i]) {
                 isPalindrome = false;
                 break;
             }
         }
-        if (isPalindrome){
-            System.out.println("Palindrome");}
-        else {
+        if (isPalindrome) {
+            System.out.println("Palindrome");
+        } else {
             System.out.println("Not a palindrome");
         }
     }
 
 
-    public static int [] task8(int [] arr){
-        int [] result = new int[arr.length];
-        result[0] = arr[arr.length-1];
+    public static int[] task8(int[] arr) {
+        int[] result = new int[arr.length];
+        result[0] = arr[arr.length - 1];
         for (int i = 1; i < arr.length; i++) {
-            result[i] = arr[i-1];
+            result[i] = arr[i - 1];
         }
         return result;
     }
 
-    public static int [] task9(int [] arr1, int [] arr2){
-        int [] newArr = new int[arr1.length + arr2.length];
+    public static int[] task9(int[] arr1, int[] arr2) {
+        int[] newArr = new int[arr1.length + arr2.length];
         System.arraycopy(arr1, 0, newArr, 0, arr1.length);
         System.arraycopy(arr2, 0, newArr, arr1.length, arr2.length);
         return newArr;
     }
 
-    public static int [] task10(int [] arr){
+    public static int[] task10(int[] arr) {
         int[] temp = new int[arr.length];
         int uniqueCount = 0;
 
@@ -697,21 +699,21 @@ public class Main {
         return result;
     }
 
-    public static int[] task11(int [] arr){
-        int [] sortArr = new int[arr.length];
+    public static int[] task11(int[] arr) {
+        int[] sortArr = new int[arr.length];
         System.arraycopy(arr, 0, sortArr, 0, arr.length);
         Arrays.sort(sortArr);
         return sortArr;
     }
 
-    public static int task12(int [] arr){
+    public static int task12(int[] arr) {
         int secondMax = Integer.MIN_VALUE;
         int max = Integer.MIN_VALUE;
-        for (int element : arr){
-            if (element > max){
+        for (int element : arr) {
+            if (element > max) {
                 secondMax = max;
                 max = element;
-            }else if (element > secondMax && element != max){
+            } else if (element > secondMax && element != max) {
                 secondMax = element;
             }
         }
@@ -719,89 +721,91 @@ public class Main {
 
     }
 
-    public static int[] task13(int [] arr){
-        int [] newArr = new int[arr.length];
+    public static int[] task13(int[] arr) {
+        int[] newArr = new int[arr.length];
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
         for (int element : arr) {
-            if (element > max){
+            if (element > max) {
                 max = element;
             }
-            if (element < min){
+            if (element < min) {
                 min = element;
             }
         }
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == max){
+            if (arr[i] == max) {
                 newArr[i] = min;
-            }else if (arr[i] == min){
+            } else if (arr[i] == min) {
                 newArr[i] = max;
-            }else {
+            } else {
                 newArr[i] = arr[i];
             }
         }
         return newArr;
     }
 
-    public static int [] task14(int [] arr){
+    public static int[] task14(int[] arr) {
         return Arrays.stream(arr).distinct().toArray();
     }
 
-    public static int [] task15(int [] arr){
+    public static int[] task15(int[] arr) {
         int positive = 0;
         int negative = 0;
         int zero = 0;
         for (int element : arr) {
-            if (element > 0){
+            if (element > 0) {
                 positive++;
-            }else if (element < 0){
+            } else if (element < 0) {
                 negative++;
-            }else {
+            } else {
                 zero++;
             }
         }
         return new int[]{positive, negative, zero};
     }
 
-    public static int  task16(int [] arr){
-        int sum1 =0;
+    public static int task16(int[] arr) {
+        int sum1 = 0;
         int sum2 = 0;
-        for (int i = 0; i<arr.length/2; i++){
-            sum1+=arr[i];
+        for (int i = 0; i < arr.length / 2; i++) {
+            sum1 += arr[i];
         }
-        for (int i = arr.length/2; i<arr.length; i++){
-            sum2+=arr[i];
+        for (int i = arr.length / 2; i < arr.length; i++) {
+            sum2 += arr[i];
         }
         return Math.max(sum1, sum2);
 
 
     }
 
-    public static int [] task17(int [] arr){
-        int [] reversedArr = new int[arr.length];
+    public static int[] task17(int[] arr) {
+        int[] reversedArr = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            reversedArr[i] = arr[arr.length-1-i];
+            reversedArr[i] = arr[arr.length - 1 - i];
         }
         return reversedArr;
     }
 
-    public static int [] task18(int [] arr1, int [] arr2){
-        int [] newArr = new int[arr1.length + arr2.length];
+    public static int[] task18(int[] arr1, int[] arr2) {
+        int[] newArr = new int[arr1.length + arr2.length];
         System.arraycopy(arr1, 0, newArr, 0, arr1.length);
         System.arraycopy(arr2, 0, newArr, arr1.length + 1, arr2.length);
         return newArr;
     }
 
-    public static boolean task19(int [] arr){
+    public static boolean task19(int[] arr) {
         int target = 9;
         for (int i = 0; i < arr.length; i++) {
-            for (int j = i+1; j < arr.length; j++) {
-                if (arr[i] + arr[j] == target){
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == target) {
                     return true;
                 }
             }
         }
         return false;
     }
+
+}
 
 
